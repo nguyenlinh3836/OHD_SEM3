@@ -1,0 +1,26 @@
+﻿@{ Layout = "_AdminLayout"; }
+
+<style>
+    a{color:white}
+</style>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var assign in Model)
+        {
+            <tr>
+                <td>@assign.UserName</td>
+                <td>@assign.FirstName</td>          
+                <td>@assign.Email</td>
+                <td><a class="btn btn-success"asp-route-id="@assign.AccountId">Assign</a></td>
+            </tr>
+        }
+    </tbody>  
+</table>

@@ -178,3 +178,17 @@ D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Acc
 D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
 D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AssignRequest.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Admin\DetailAccount.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Admin\ListAccount.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Admin\ListAssignee.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Reject.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Assignee\Index.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CreateRequest.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Index.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Welcome.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Role\Index.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\bin\Debug\netcoreapp3.1\libman.json
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Role\Create.cshtml.g.cs

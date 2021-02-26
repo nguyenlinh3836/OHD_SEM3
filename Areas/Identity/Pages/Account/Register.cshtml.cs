@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 
@@ -33,8 +34,8 @@ namespace OHD_SEM3.Areas.Identity.Pages.Account
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
-            _emailSender = emailSender;
-        }
+            _emailSender = emailSender;            
+    }
 
         [BindProperty]
         public InputModel Input { get; set; }
@@ -60,6 +61,10 @@ namespace OHD_SEM3.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [DataType(DataType.PhoneNumber)]
+            [Display(Name ="Phone Number")]
+            public string PhoneNuber { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
