@@ -29,33 +29,9 @@ namespace OHD_SEM3
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("OHDConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                    Configuration.GetConnectionString("OHDConnection")));        
             services.AddControllersWithViews();
-            services.AddRazorPages();
-            services.Configure<IdentityOptions>(options => {
-          
-                options.Password.RequireDigit = false; 
-                options.Password.RequireLowercase = false; 
-                options.Password.RequireNonAlphanumeric = false; 
-                options.Password.RequireUppercase = false; 
-                options.Password.RequiredLength = 6;
-                options.Password.RequiredUniqueChars = 1;
-
-               
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); 
-                options.Lockout.AllowedForNewUsers = true;
-
-             
-                options.User.AllowedUserNameCharacters =
-                    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
-                options.User.RequireUniqueEmail = true;               
-                options.SignIn.RequireConfirmedEmail = false;           
-                options.SignIn.RequireConfirmedPhoneNumber = false;
-                options.SignIn.RequireConfirmedAccount = false;
-
-            });
+            services.AddRazorPages();         
 
         }
 
