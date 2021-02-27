@@ -67,8 +67,6 @@ namespace OHD_SEM3.Areas.Identity.Pages.Account
             await _roleManager.CreateAsync(new IdentityRole("Administrator"));
             await _roleManager.CreateAsync(new IdentityRole("Assignee"));
             await _roleManager.CreateAsync(new IdentityRole("Customer"));
-
-
             var userAdmin = new User();
             userAdmin.UserName = "Admin@admin.com";
             userAdmin.Email = "Admin@admin.com";
