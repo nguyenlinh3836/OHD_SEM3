@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\LEARN_PROJECT\\OHD_SEM3\\OHD_SEM3.csproj": {}
+    "K:\\Project\\OHD_SEM3\\OHD_SEM3.csproj": {}
   },
   "projects": {
-    "D:\\LEARN_PROJECT\\OHD_SEM3\\OHD_SEM3.csproj": {
+    "K:\\Project\\OHD_SEM3\\OHD_SEM3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LEARN_PROJECT\\OHD_SEM3\\OHD_SEM3.csproj",
+        "projectUniqueName": "K:\\Project\\OHD_SEM3\\OHD_SEM3.csproj",
         "projectName": "OHD_SEM3",
-        "projectPath": "D:\\LEARN_PROJECT\\OHD_SEM3\\OHD_SEM3.csproj",
-        "packagesPath": "C:\\Users\\LEGION\\.nuget\\packages\\",
-        "outputPath": "D:\\LEARN_PROJECT\\OHD_SEM3\\obj\\",
+        "projectPath": "K:\\Project\\OHD_SEM3\\OHD_SEM3.csproj",
+        "packagesPath": "C:\\Users\\Green Cat\\.nuget\\packages\\",
+        "outputPath": "K:\\Project\\OHD_SEM3\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "K:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\LEGION\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Green Cat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -26,6 +30,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +42,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
@@ -81,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
