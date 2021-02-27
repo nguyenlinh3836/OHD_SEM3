@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using OHD_SEM3.Models;
+using OHD_SEM3.Areas.Identity.Pages.Account;
 
 namespace OHD_SEM3.Controllers
 {
