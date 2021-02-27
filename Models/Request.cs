@@ -16,8 +16,8 @@ namespace OHD_SEM3.Models
         public string Remark { get; set; }
         public int FacilityId { get; set; }
         public Facility Facility { get; set; }
-        public int? Assignee { get; set; }
-        public int requestorId { get; set; }
+        public string? AssigneeId { get; set; }
+        public string requestorId { get; set; }
         public User User { get; set; }       
     }
 }
