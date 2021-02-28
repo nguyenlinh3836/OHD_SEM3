@@ -64,7 +64,9 @@ namespace OHD_SEM3.Areas.Identity.Pages.Account
 
             [DataType(DataType.PhoneNumber)]
             [Display(Name ="Phone Number")]
-            public string PhoneNuber { get; set; }
+            public string Contact { get; set; }
+            [Display(Name ="Gender")]
+            public string Gender { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
