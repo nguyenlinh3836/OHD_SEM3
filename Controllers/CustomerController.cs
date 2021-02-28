@@ -57,6 +57,12 @@ namespace OHD_SEM3.Controllers
             }
             return View(request);
         }
-        
+        public async Task<IActionResult> History()
+        {
+            var User = await _userManager.GetUserAsync(HttpContext.User);
+            var ListRequest = await _context.Requests.Where(x => x.requestorId == User.Id).ToListAsync();
+            return View(ListRequest);
+        }
+
     }
 }

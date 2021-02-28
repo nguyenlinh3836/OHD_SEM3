@@ -4,9 +4,10 @@
     <thead>
         <tr>
             <th>Subject</th>
-            <th>Description</th>           
+            <th>Description</th>
+            <th>User</th>
             <th>Status</th>
-            <th>Update Status</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -14,10 +15,10 @@
         {
             <tr>
                 <td>@request.Subject</td>
-                <td>@request.Description</td>                
-                <td>@request.Status</td>
+                <td>@request.Description</td>               
+                <td>@request.Status</td>   
                 <td>
-                    <a class="btn btn-primary" asp-controller="Assignee" asp-action="UpdateStatus" asp-route-userId="@request.RequestId">Set Roles</a>
+
                 </td>
             </tr>
         }
