@@ -11,5 +11,8 @@ namespace OHD_SEM3.Models.ViewModel
         public Request _requests { get; set; }
         public Facility _facilities { get; set; }
         public IdentityUser _users { get; set; }
+        public IdentityRole _roles { get; set; }
+        public IdentityUserRole<string> _userrole { get; set; }
+
     }
 }
