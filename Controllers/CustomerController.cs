@@ -15,11 +15,11 @@ namespace OHD_SEM3.Controllers
 {
     public class CustomerController : Controller
     {
-        private UserManager<User> UserManager;
+        private UserManager<User> _userManager;
         private ApplicationDbContext _context;
         public CustomerController(UserManager<User> userManager, ApplicationDbContext context)
         {
-            UserManager = userManager;
+            _userManager = userManager;
             _context = context;
         }
 
@@ -36,14 +36,14 @@ namespace OHD_SEM3.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateRequest(Request request)
         {
-            User applicationUser = await UserManager.GetUserAsync(User);
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);// will give the user's userId       
-
-          
+            User applicationUser = await _userManager.GetUserAsync(User);
+            var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);// will give the user's userId       
+                    
             if (ModelState.IsValid)
             {
+                var UserID = _userManager.GetUserId(HttpContext.User);
                 request.CreateTime = DateTime.Now;
-                request.requestorId = userId;
+                request.requestorId = UserID;
                 _context.Add(Request);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

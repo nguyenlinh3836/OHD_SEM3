@@ -193,3 +193,5 @@ D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AdminLayou
 D:\LEARN_PROJECT\OHD_SEM3\bin\Debug\netcoreapp3.1\libman.json
 D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Role\Create.cshtml.g.cs
 D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Admin\SetRole.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
+D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Shared\AboutUs.cshtml.g.cs
