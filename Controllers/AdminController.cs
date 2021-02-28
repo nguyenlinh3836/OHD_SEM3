@@ -82,7 +82,7 @@ namespace OHD_SEM3.Controllers
             return View(model);
         }
         [HttpPost]
-        public async Task<IActionResult> Manage(List<ManageUserRolesViewModel> model, string userId)
+        public async Task<IActionResult> SetRole(List<ManageUserRolesViewModel> model, string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
@@ -102,7 +102,7 @@ namespace OHD_SEM3.Controllers
                 ModelState.AddModelError("", "Cannot add selected roles to user");
                 return View(model);
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("ListAccount");
         }
 
     }

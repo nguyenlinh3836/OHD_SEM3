@@ -14,7 +14,7 @@ namespace OHD_SEM3.Models
         public DateTime CreateTime { get; set; }
         public DateTime UpdateTime { get; set; }
         public string Remark { get; set; }
-        public int FacilityId { get; set; }
+        public int? FacilityId { get; set; }
         public Facility Facility { get; set; }
         public string? AssigneeId { get; set; }
         public string requestorId { get; set; }

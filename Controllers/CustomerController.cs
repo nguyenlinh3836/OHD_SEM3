@@ -35,15 +35,12 @@ namespace OHD_SEM3.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateRequest(Request request)
-        {
-            User applicationUser = await _userManager.GetUserAsync(User);
-            var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);// will give the user's userId       
-                    
-            if (ModelState.IsValid)
+        {         
+        if (ModelState.IsValid)
             {
-                var UserID = _userManager.GetUserId(HttpContext.User);
+                var User = await _userManager.GetUserAsync(HttpContext.User);              
                 request.CreateTime = DateTime.Now;
-                request.requestorId = UserID;
+                request.requestorId = User.Id;
                 _context.Add(Request);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
