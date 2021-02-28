@@ -1,0 +1,35 @@
+﻿@using OHD_SEM3.Models
+@model List<OHD_SEM3.Models.ViewModel.ViewModel1>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1 style="color:black;">List Requests</h1>
+<table class="table table-striped">
+    <thead style="color:black;">
+        <tr>
+            <th>RequestID</th>
+            <th>Subject</th>
+            <th>Requestor</th>
+            <th>Facility</th>
+            <th>Create Time</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item._requests.RequestId</td>
+                <td>@item._requests.Subject</td>
+                <td>@item._users.Email</td>
+                <td>@item._facilities.FacilityName</td>
+                <td>@item._requests.CreateTime</td>
+                <td>@item._requests.Status</td>
+                <td>
+                    <a class="btn btn-primary" style="position:relative;top:-7px;" asp-controller="UserRoles" asp-action="Manage" asp-route-userId="@item._requests.RequestId">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

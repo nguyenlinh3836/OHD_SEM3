@@ -10,9 +10,17 @@ namespace OHD_SEM3.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
+        public ApplicationDbContext() { }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=OHD_SEM3;Trusted_Connection=True;MultipleActiveResultSets=true");
+            }
         }
         public virtual DbSet<Facility> Facilities { get; set; }
         public virtual DbSet<Request> Requests { get; set; }

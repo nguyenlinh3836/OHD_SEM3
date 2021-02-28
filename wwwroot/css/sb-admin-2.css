@@ -13,6 +13,7 @@
 :root {
   --blue: #4e73df;
   --indigo: #6610f2;
+  --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
   --red: #e74a3b;
@@ -1486,7 +1487,7 @@ pre code {
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  color: #858796;
+  color: #24262e;
 }
 
 .table th,

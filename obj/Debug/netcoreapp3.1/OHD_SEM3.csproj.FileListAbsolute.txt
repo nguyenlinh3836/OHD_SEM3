@@ -384,3 +384,5 @@ K:\Project\OHD_SEM3\obj\Debug\netcoreapp3.1\OHD_SEM3.csproj.CopyComplete
 K:\Project\OHD_SEM3\obj\Debug\netcoreapp3.1\OHD_SEM3.dll
 K:\Project\OHD_SEM3\obj\Debug\netcoreapp3.1\OHD_SEM3.pdb
 K:\Project\OHD_SEM3\obj\Debug\netcoreapp3.1\OHD_SEM3.genruntimeconfig.cache
+K:\Project\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Admin\ListRequest.cshtml.g.cs
+K:\Project\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Admin\DetailsRequest.cshtml.g.cs

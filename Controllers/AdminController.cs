@@ -22,6 +22,7 @@ namespace OHD_SEM3.Controllers
             _roleManager = roleManager;
             _userManager = userManager;
         }
+
         public IActionResult Index()
         {
             return View();
@@ -46,6 +47,52 @@ namespace OHD_SEM3.Controllers
         private async Task<List<string>> GetUserRoles(User user)
         {
             return new List<string>(await _userManager.GetRolesAsync(user));
+        }
+
+        public async Task<IActionResult> ListRequest()
+        {
+            using (ApplicationDbContext db = new ApplicationDbContext())
+            {
+                List<Request> _requests = db.Requests.ToList();
+                List<Facility> _facilities = db.Facilities.ToList();
+                List<IdentityUser> _users = db.Users.ToList();
+
+                var listRequests = from r in _requests
+                                   from f in _facilities
+                                   where r.FacilityId == f.FacilityId
+                                   from u in _users
+                                   where r.requestorId == u.Id
+                                   select new ViewModel1
+                                   {
+                                       _requests = r,
+                                       _facilities = f,
+                                       _users = u
+                                   };
+                return View(listRequests.ToList());
+            }
+        }
+        public async Task<IActionResult> DetailsRequest()
+        {
+            using (ApplicationDbContext db = new ApplicationDbContext())
+            {
+                List<Request> _requests = db.Requests.ToList();
+                List<Facility> _facilities = db.Facilities.ToList();
+                List<IdentityUser> _users = db.Users.ToList();
+
+                var detailsRequest = from r in _requests
+                             from f in _facilities
+                             where r.FacilityId == f.FacilityId 
+                             from u in _users
+                             where r.requestorId == u.Id
+                             where r.RequestId == 14
+                             select new ViewModel1
+                             {
+                                 _requests = r,
+                                 _facilities = f,
+                                 _users = u
+                             };
+                return View(detailsRequest);
+            }
         }
     }
 }
