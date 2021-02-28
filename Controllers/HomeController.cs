@@ -24,18 +24,19 @@ namespace OHD_SEM3.Controllers
 
         public IActionResult Index()
         {
+            
             var _role = HttpContext.Session.GetString("role");
-            if (_role == "Administrator")
+            if (HttpContext.Session.GetString("role") == "Administrator")
             {
-                return RedirectToAction("Index", "Admin");
+                return View("Index", "Admin");
             }
             else if (_role == "Assignee")
             {
-                return RedirectToAction("Index", "Assignee");
+                return View("Index", "Assignee");
             }
             else if (_role == "Customer")
             {
-                return RedirectToAction("Index", "Customer");
+                return View("Index", "Customer");
             }
             else
             {
