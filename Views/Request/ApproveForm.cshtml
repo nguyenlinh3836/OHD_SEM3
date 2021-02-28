@@ -1,0 +1,42 @@
+﻿@using OHD_SEM3.Models
+@model IEnumerable<OHD_SEM3.Models.ViewModel.ViewModel1>
+@{
+    ViewData["Title"] = "ApproveForm";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<environment>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-select.css" />
+</environment>
+<h3>Approve form</h3>
+<form class="form-horizontal" method="POST">
+    <div class="form-group">
+        <select name="assignee" id="assignee" class="show-tick form-control" data-live-search="true" style="max-width:300px">
+            @foreach (var item in Model)
+            {
+                <option value="">@item._users.Email - @item._roles.Name</option>
+            }
+
+
+        </select>
+    </div>
+    <div class="input-group" style="margin-left:100px">
+        <div class="submitbutton">
+            <button type="button" class="btn btn-primary btn-block btn-danger">Back</button>
+        </div>
+    </div>
+    <div class="input-group" style="position:relative;top:-37px; left:170px">
+        <div class="submitbutton">
+            <button type="submit" class="btn btn-primary btn-block submit-btn" onclick="return confirm('Confirm to reject the request !!!')">Confirm</button>
+        </div>
+    </div>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        $('.selectpicker').selectpicker();
+        $('#basic2').selectpicker({
+            liveSearch: true,
+            maxOptions: 1
+        });
+    });
+</script>

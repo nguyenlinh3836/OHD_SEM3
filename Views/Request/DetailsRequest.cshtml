@@ -1,0 +1,146 @@
+﻿@using OHD_SEM3.Models
+@model IEnumerable<OHD_SEM3.Models.ViewModel.ViewModel1>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@foreach (var item in Model)
+{
+<h4 style="color:black">Request ID: @item._requests.RequestId</h4>
+<div style="margin-top:30px;color:black">
+    <div class="form-group">
+        <label for="subject" class="control-label" style="margin-left: 70px;">Subject: </label>
+        <div class="input-group" style="max-width: 400px;margin-left: 200px;position:relative;top: -31px">
+            @item._requests.Subject
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="description" class="control-label" style="margin-left: 70px;">Decription: </label>
+        <div class="input-group" style="max-width: 400px;margin-left: 200px;position:relative;top: -31px">
+            @item._requests.Description
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="requestorId" class="control-label" style="margin-left: 70px;">Requestor ID: </label>
+        <div class="input-group" style="max-width: 400px;margin-left: 200px;position:relative;top: -32px">
+            @item._requests.requestorId
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="requestorId" class="control-label" style="margin-left: 70px;">Requestor: </label>
+        <div class="input-group" style="max-width: 400px;margin-left: 200px;position:relative;top: -32px">
+            @item._users.Email
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="facilityId" class="control-label" style="margin-left: 70px;">Facility ID: </label>
+        <div class="input-group" style="max-width: 400px;margin-left: 200px;position:relative;top: -31px">
+            @item._requests.FacilityId
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="facility" class="control-label" style="margin-left: 70px;">Facility: </label>
+        <div class="input-group" style="max-width: 400px;margin-left: 200px;position:relative;top: -31px">
+            @item._facilities.FacilityName
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="createtime" class="control-label" style="margin-left: 70px;">Create Time: </label>
+        <div class="input-group" style="max-width: 400px;margin-left: 200px;position:relative;top: -31px">
+            @item._requests.CreateTime
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="facility" class="control-label" style="margin-left: 70px;">Assignee: </label>
+        <div class="input-group" style="max-width: 400px;margin-left: 200px;position:relative;top: -31px">
+            @item._requests.AssigneeId
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="facility" class="control-label" style="margin-left: 70px;">Update Time: </label>
+        <div class="input-group" style="max-width: 400px;margin-left: 200px;position:relative;top: -31px">
+            @item._requests.UpdateTime
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="facility" class="control-label" style="margin-left: 70px;">Current Status: </label>
+        <div class="input-group" style="max-width: 400px;margin-left: 200px;position:relative;top: -31px">
+            @item._requests.Status
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="facility" class="control-label" style="margin-left: 70px;">Current Remark: </label>
+        <div class="input-group" style="max-width: 400px;margin-left: 200px;position:relative;top: -32px">
+            @item._requests.Remark
+        </div>
+    </div>
+
+    <div class="input-group" style="position:relative;left:330px">
+        <div class="submitbutton">
+            <a type="button" href="" class="btn btn-primary btn-block btn-danger" data-toggle="modal" data-target="#modalReject">Reject</a>
+            <div class="modal" id="modalReject">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="width:600px;position: relative;top: 60px;left:-220px; padding: 20px 20px 50px 50px;">
+                        <h4>Reject form</h4>
+                        <form method="POST">
+                            <div class="form-group">
+                                <label for="remark" class="control-label">Remark:</label>
+                                <textarea class="form-control" style="max-width: 400px;" placeholder="Enter remark (100)"></textarea>
+                            </div>
+                            <div class="input-group" style="margin-left:100px">
+                                <div class="submitbutton">
+                                    <button type="button" class="btn btn-primary btn-block btn-danger" data-dismiss="modal" onclick="return confirm('Confirm to cancel reject !!!')">Cancel</button>
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-left:150px">
+                                <div class="submitbutton">
+                                    <button type="submit" class="btn btn-primary btn-block submit-btn" onclick="return confirm('Confirm to reject the request !!!')">Confirm</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="input-group" style="position:relative;left:410px;top:-38px ">
+        <div class="submitbutton">
+            <a type="button" href="" class="btn btn-primary btn-block btn-danger" data-toggle="modal" data-target="#modalReject">Reject</a>
+            <div class="modal" id="modalReject">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="width:600px;position: relative;top: 60px;left:-220px; padding: 20px 20px 50px 50px;">
+                        <h4>Approve form</h4>
+                        <form method="POST">
+                            <div class="form-group">
+                                <label for="assignee" class="control-label">Assignee:</label>
+                                
+                            </div>
+                            <div class="input-group" style="margin-left:100px">
+                                <div class="submitbutton">
+                                    <button type="button" class="btn btn-primary btn-block btn-danger" data-dismiss="modal" onclick="return confirm('Confirm to cancel reject !!!')">Cancel</button>
+                                </div>
+                            </div>
+                            <div class="input-group" style="margin-left:150px">
+                                <div class="submitbutton">
+                                    <button type="submit" class="btn btn-primary btn-block submit-btn" onclick="return confirm('Confirm to reject the request !!!')">Confirm</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}

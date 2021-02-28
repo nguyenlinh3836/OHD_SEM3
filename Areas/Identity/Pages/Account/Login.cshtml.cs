@@ -92,9 +92,8 @@ namespace OHD_SEM3.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
         }
 
-        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
-        {
-            returnUrl = returnUrl ?? Url.Content("~/");
+        public async Task<IActionResult> OnPostAsync(string returnUrl)
+        {            
 
             if (ModelState.IsValid)
             {
@@ -102,28 +101,32 @@ namespace OHD_SEM3.Areas.Identity.Pages.Account
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
-                {
-                    _logger.LogInformation("User logged in.");
-
+                {                  
                     var User = await _userManager.FindByEmailAsync(Input.Email);
                     var roleName = await _userManager.GetRolesAsync(User);
+
                     if (roleName.FirstOrDefault() == "Administrator")
                     {
                         return RedirectToAction("Index", "Admin");
                     }
-                    if (roleName.FirstOrDefault() == "Assignee")
+                    else if (roleName.FirstOrDefault() == "Assignee")
                     {
                         return RedirectToAction("Index", "Assignee");
                     }
-                    if (roleName.FirstOrDefault() == "Customer")
+                    else if (roleName.FirstOrDefault() == "Customer")
                     {
                         return RedirectToAction("Welcome", "Customer");
                     }
-                    if (roleName.FirstOrDefault() == "User")
+                    else if (roleName.FirstOrDefault() == "User")
                     {
                         return RedirectToAction("Index", "Home");
                     }
-                    return LocalRedirect(returnUrl);
+                    else
+                    {
+                        _logger.LogInformation("User logged in.");
+                        return LocalRedirect(returnUrl);
+                    }
+                    
                 }
                 if (result.RequiresTwoFactor)
                 {

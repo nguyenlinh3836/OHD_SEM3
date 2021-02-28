@@ -21,16 +21,11 @@ namespace OHD_SEM3.Controllers
             _roleManager = roleManager;
             _userManager = userManager;
         }
-    //    public async Task<IActionResult> Index()
-    //    {
-    //        var Assignee = await _context.Users.Wh;
-         
-    //        foreach(var assignee in Assignee)
-    //        {
-
-    //        }
-
-    //        return View();
-    //    }
+        public async Task<IActionResult> Index()
+        {
+            var User = await _userManager.GetUserAsync(HttpContext.User);
+            var ListRequest = await _context.Requests.Where(x => x.AssigneeId == User.Id).ToListAsync();
+            return View(ListRequest);
+        }
     }
 }

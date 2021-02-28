@@ -1,1 +1,27 @@
-﻿
+﻿@model IEnumerable<Request>
+<h1>List Request</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>User</th>
+            <th>Status</th>
+            <th>Update Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var request in Model)
+        {
+            <tr>
+                <td>@request.Subject</td>
+                <td>@request.Description</td>
+                <td>@request.requestorId</td>
+                <td>@request.Status</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Assignee" asp-action="UpdateStatus" asp-route-userId="@request.RequestId">Set Roles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
