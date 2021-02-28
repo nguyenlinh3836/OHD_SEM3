@@ -24,24 +24,7 @@ namespace OHD_SEM3.Controllers
 
         public IActionResult Index()
         {
-            
-            var _role = HttpContext.Session.GetString("role");
-            if (HttpContext.Session.GetString("role") == "Administrator")
-            {
-                return View("Index", "Admin");
-            }
-            else if (_role == "Assignee")
-            {
-                return View("Index", "Assignee");
-            }
-            else if (_role == "Customer")
-            {
-                return View("Index", "Customer");
-            }
-            else
-            {
-                return View();
-            }
+            return View();
         }
 
         public IActionResult Privacy()
