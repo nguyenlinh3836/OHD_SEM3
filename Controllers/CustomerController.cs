@@ -10,9 +10,11 @@ using OHD_SEM3.Models;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication.OAuth;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OHD_SEM3.Controllers
 {
+    [Authorize(Roles = "Customer")]
     public class CustomerController : Controller
     {
         private UserManager<User> _userManager;
@@ -27,11 +29,18 @@ namespace OHD_SEM3.Controllers
         {
             return View();
         }
-       
+        public IActionResult Done()
+        {
+            return View();
+        }
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.Facilities.ToListAsync());
         }
+        [TempData] 
+        public string StatusMessage { get; set; }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateRequest(Request request)
@@ -41,9 +50,10 @@ namespace OHD_SEM3.Controllers
                 var User = await _userManager.GetUserAsync(HttpContext.User);              
                 request.CreateTime = DateTime.Now;
                 request.requestorId = User.Id;
-                _context.Add(Request);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                request.Status = "Pending";
+                _context.Add(request);
+                await _context.SaveChangesAsync();             
+                return RedirectToAction(nameof(Done));
             }
             return View(request);
         }

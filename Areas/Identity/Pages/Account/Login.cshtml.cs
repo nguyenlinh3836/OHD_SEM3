@@ -117,7 +117,7 @@ namespace OHD_SEM3.Areas.Identity.Pages.Account
                     }
                     if (roleName.FirstOrDefault() == "Customer")
                     {
-                        return RedirectToAction("Index", "Customer");
+                        return RedirectToAction("Welcome", "Customer");
                     }
                     if (roleName.FirstOrDefault() == "User")
                     {

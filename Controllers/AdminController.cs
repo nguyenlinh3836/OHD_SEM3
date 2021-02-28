@@ -104,6 +104,19 @@ namespace OHD_SEM3.Controllers
             }
             return RedirectToAction("ListAccount");
         }
-
+        [HttpPost]
+        public async Task<IActionResult> RejectRequest([Bind("Status,Remark,UpdateTime,Status")]Request request,string AssignId)
+        {
+            if (ModelState.IsValid)
+            {
+                request.UpdateTime = DateTime.Now;
+                request.Status = "Reject";
+                _context.Update(request);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(request);
+        }
+       
     }
 }

@@ -1,10 +1,14 @@
 ﻿@model IEnumerable<Facility>
+@{
+    var message = ViewBag.SuccessMsg;
+}
 <form method="post" asp-action="CreateRequest" asp-controller="Customer">
     <div class="form-group">
         <label for="exampleFormControlInput1">Subject</label>
         <input name="Subject" class="form-control">
     </div>
     <div class="form-group">
+      
         <label for="exampleFormControlSelect1">Facilities select</label>
         <select class="form-control" id="exampleFormControlSelect1" name="FacilityId">
             @foreach (var p in Model)
@@ -16,7 +20,8 @@
 
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Request Detail</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="Description"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="Description"></textarea>    
     </div>
     <button type="submit" class="btn btn-primary mb-2">Send</button>
 </form>
+
