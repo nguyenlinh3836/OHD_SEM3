@@ -36,7 +36,10 @@ namespace OHD_SEM3.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateRequest(Request request)
         {
-            var userId = UserManager.GetUserId(User);
+            User applicationUser = await UserManager.GetUserAsync(User);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);// will give the user's userId       
+
+          
             if (ModelState.IsValid)
             {
                 request.CreateTime = DateTime.Now;

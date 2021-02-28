@@ -31,7 +31,8 @@ namespace OHD_SEM3
                 options.UseSqlServer(
                     Configuration.GetConnectionString("OHDConnection")));        
             services.AddControllersWithViews();
-            services.AddRazorPages();         
+            services.AddRazorPages();        
+
 
         }
 

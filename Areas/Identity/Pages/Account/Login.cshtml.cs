@@ -104,6 +104,7 @@ namespace OHD_SEM3.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+
                     var User = await _userManager.FindByEmailAsync(Input.Email);
                     var roleName = await _userManager.GetRolesAsync(User);
                     if (roleName.FirstOrDefault() == "Administrator")
