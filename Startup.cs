@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Session;
 using OHD_SEM3.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +18,7 @@ namespace OHD_SEM3
 {
     public class Startup
     {
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,7 +33,10 @@ namespace OHD_SEM3
                 options.UseSqlServer(
                     Configuration.GetConnectionString("OHDConnection")));        
             services.AddControllersWithViews();
-            services.AddRazorPages();         
+            services.AddRazorPages();
+            services.AddMvc()
+                .AddSessionStateTempDataProvider();
+            services.AddSession();
 
         }
 
@@ -54,6 +59,8 @@ namespace OHD_SEM3
 
             app.UseRouting();
 
+            app.UseSession();
+
             app.UseAuthentication();
             app.UseAuthorization();
 
@@ -65,5 +72,7 @@ namespace OHD_SEM3
                 endpoints.MapRazorPages();
             });
         }
+
+
     }
 }

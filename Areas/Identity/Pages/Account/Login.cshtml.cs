@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 using OHD_SEM3.Data;
 using OHD_SEM3.Models;
 
@@ -94,8 +95,6 @@ namespace OHD_SEM3.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl = returnUrl ?? Url.Content("~/");
-
             if (ModelState.IsValid)
             {
                 // This doesn't count login failures towards account lockout
@@ -106,6 +105,8 @@ namespace OHD_SEM3.Areas.Identity.Pages.Account
                     _logger.LogInformation("User logged in.");
                     var User = await _userManager.FindByEmailAsync(Input.Email);
                     var roleName = await _userManager.GetRolesAsync(User);
+                    HttpContext.Session.SetString("role",roleName.FirstOrDefault());
+                   
                     if (roleName.FirstOrDefault() == "Administrator")
                     {
                         return RedirectToAction("Index", "Admin");

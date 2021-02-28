@@ -389,4 +389,4 @@ K:\Project\OHD_SEM3\obj\Debug\netcoreapp3.1\OHD_SEM3.RazorTargetAssemblyInfo.cs
 K:\Project\OHD_SEM3\obj\Debug\netcoreapp3.1\OHD_SEM3.Views.pdb
 K:\Project\OHD_SEM3\obj\Debug\netcoreapp3.1\OHD_SEM3.csproj.CopyComplete
 K:\Project\OHD_SEM3\obj\Debug\netcoreapp3.1\OHD_SEM3.genruntimeconfig.cache
-K:\Project\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Admin\SearchAccount.cshtml.g.cs
+K:\Project\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Admin\SearchAccountByEmail.cshtml.g.cs

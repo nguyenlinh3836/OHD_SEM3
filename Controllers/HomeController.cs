@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using OHD_SEM3.Models;
 using OHD_SEM3.Areas.Identity.Pages.Account;
+using Microsoft.AspNetCore.Http;
 
 namespace OHD_SEM3.Controllers
 {
@@ -23,7 +24,23 @@ namespace OHD_SEM3.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var _role = HttpContext.Session.GetString("role");
+            if (_role == "Administrator")
+            {
+                return RedirectToAction("Index", "Admin");
+            }
+            else if (_role == "Assignee")
+            {
+                return RedirectToAction("Index", "Assignee");
+            }
+            else if (_role == "Customer")
+            {
+                return RedirectToAction("Index", "Customer");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public IActionResult Privacy()
