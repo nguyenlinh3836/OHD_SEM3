@@ -25,10 +25,15 @@ namespace OHD_SEM3.Controllers
             _roleManager = roleManager;
             _userManager = userManager;
         }
-        
         public IActionResult Index()
         {
-            return View();
+            UserListViewModel viewModel = new UserListViewModel();
+            viewModel.TotalUser = _context.Users.Count();
+            viewModel.TotalFaccilies = _context.Facilities.Count();
+            viewModel.TotalRequest = _context.Requests.Count();
+            viewModel.TotalPending = _context.Requests.Where(x=>x.Status=="Pending").Count();
+
+            return View(viewModel);
         }
         public async Task<IActionResult> ListAccount()
         {

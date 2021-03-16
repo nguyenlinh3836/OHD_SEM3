@@ -62,7 +62,7 @@ namespace OHD_SEM3
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Admin}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=AboutUs}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

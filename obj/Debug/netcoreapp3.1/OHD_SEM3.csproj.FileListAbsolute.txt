@@ -180,7 +180,6 @@ D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Admin\ListAccount.
 D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Admin\ListAssignee.cshtml.g.cs
 D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Reject.cshtml.g.cs
 D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Assignee\Index.cshtml.g.cs
-D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Customer\CreateRequest.cshtml.g.cs
 D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Index.cshtml.g.cs
 D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Welcome.cshtml.g.cs
 D:\LEARN_PROJECT\OHD_SEM3\obj\Debug\netcoreapp3.1\Razor\Views\Role\Index.cshtml.g.cs

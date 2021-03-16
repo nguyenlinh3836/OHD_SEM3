@@ -99,9 +99,8 @@ namespace OHD_SEM3.Areas.Identity.Pages.Account
                         return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
                     }
                     else
-                    {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
+                    {                       
+                        return RedirectToAction("ListAccount", "Admin");                       
                     }
                 }
                 foreach (var error in result.Errors)

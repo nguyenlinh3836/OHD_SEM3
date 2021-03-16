@@ -40,25 +40,17 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Create
-            </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
+
+            <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                   aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Action</span>
+                <a class="nav-link" asp-controller="Request" asp-action="ListRequest">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Assign Request</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">                                           
-                        <a class="collapse-item" asp-action="ListAssignee" asp-controller="Admin">List Assignee</a>
-                        <a class="collapse-item" asp-action="ListRequest" asp-controller="Request">Assign Request</a>                       
-                    </div>
-                </div>
             </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
@@ -77,16 +69,7 @@
                     </div>
                 </div>
             </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">         
-       
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" asp-controller="Home" asp-action="AboutUs">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>About Us</span>
-                </a>
-            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

@@ -25,7 +25,7 @@ namespace OHD_SEM3.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult AboutUs()
         {
             return View();
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,8 @@ using OHD_SEM3.Models;
 
 namespace OHD_SEM3.Controllers
 {
+    [Authorize]
+    [Authorize(Roles = "Assignee")]
     public class AssigneeController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -27,6 +30,7 @@ namespace OHD_SEM3.Controllers
             var ListRequest = await _context.Requests.Where(x => x.AssigneeId == User.Id).ToListAsync();
             return View(ListRequest);
         }
+
         [HttpPost]
         public async Task<IActionResult> RejectRequest([Bind("Status,Remark")] Request request, int AssignId)
         {
